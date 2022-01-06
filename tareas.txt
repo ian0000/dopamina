@@ -1,0 +1,38 @@
+(-g = general; -c = cliente; -u = admin; -t = templates)
+-- por hacer
+
+bucket de aws -g generar la bucket y enlazarla
+
+actualizarRopa -u
+crearRopa -u
+
+actualizarUsuario -u
+crearRopaUsuario -u
+
+pedidos -g
+
+tests? -g
+-- por arreglar
+cuando se hace el deploy en heroku los links cambian, arreglar los links cuando se despliegue -g
+cerrar-sesion -u no he probado si funciona o no 
+nosotros -g agregar que se cambie dependiendo los usuarios en db
+cart -t que se mantenga los items en el carrito aunque cambie de paginas
+databasecon -a cambiar los datos de la db en heroku
+
+revisar que las vistas funcionen correctamente en los distintos disp
+cambiar el navbar para que se recoja cuando es cel 
+que el navbar se mueva con la posicion de la pantalla
+-- funciona
+index -u
+carrito -c
+contacto -g 
+coleccion -c
+disenio -t
+footer -t
+header -t
+index -g
+login -u
+-- corregido
+-- finalizado
+
+

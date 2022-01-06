@@ -1,0 +1,75 @@
+.boton-rosa {
+    padding: 1rem;
+    font-size: 1rem;
+    background: $color-2;
+    border-radius: 1rem;
+    @include tablet {
+        padding: 1rem;
+        font-size: 2rem;
+        left: 50rem;
+        font-size: 2rem;
+    }
+    &:hover {
+        background: rgba($color: $color-2, $alpha: .5);
+        color: $color-2;
+    }
+}
+
+.centrado {
+    margin: auto;
+    position: absolute;
+    left: 40%;
+    @include tablet {
+        left: 48%;
+    }
+}
+
+.somos {
+    height: auto;
+    background: $color-2;
+    h2 {
+        margin-top: 8rem;
+    }
+}
+
+.who {
+    position: absolute;
+    height: auto;
+    background: url('/build/img/raf1.webp') no-repeat center center/cover;
+}
+
+.tarj {
+    display: flex;
+    flex-direction: column;
+    border: 1px $color-1 solid;
+    gap: 3rem;
+    border-radius: 1rem;
+    margin: 2rem 6rem;
+    padding: 2rem 4rem;
+    background-color: rgba($color: $color-4, $alpha: 0.4);
+    @include tablet {
+        flex-direction: row;
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+    &:last-of-type {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+    img {
+        height: 12rem;
+        width: auto;
+        border-radius: 10rem;
+    }
+}
+
+p {
+    color: $color-2;
+}
+
+.informacion {
+    transform: translate(0, -auto);
+    padding-bottom: 1rem;
+    background: transparent;
+}

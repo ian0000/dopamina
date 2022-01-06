@@ -1,0 +1,17 @@
+{
+  "name": "ugh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w src/scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1048.0",
+    "dotenv": "^10.0.0",
+    "node-sass": "^7.0.1"
+  }
+}

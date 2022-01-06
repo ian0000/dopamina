@@ -1,0 +1,82 @@
+.bg-image {
+    background: $color-2 url('../../dist/img/doctf.png') no-repeat center center/cover;
+    filter: blur(1.5rem);
+    -webkit-filter: blur(3px);
+    height: 100vh;
+    width: 100%;
+}
+
+.titulo {
+    color: $color-2;
+    font-weight: $bold;
+    /* Fallback color */
+    background-color: rgba($color: $color-4, $alpha: 0.4);
+    /* Black w/opacity/see-through */
+    border: 3px solid #f1f1f1;
+    left: 50%;
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 3rem;
+    @include tablet {
+        font-size: 14rem;
+    }
+}
+
+.center {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.frase {
+    @include tablet {
+        font-size: 3rem;
+        top: 60%;
+    }
+    font-size: 1rem;
+    color: $color-2;
+    top: 62%;
+    font-weight: $avanzada;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+.link {
+    color: $color-4;
+    top: 70%;
+    left: 50%;
+    font-weight: $avanzada;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 1rem;
+    @include tablet {
+        font-size: 3rem;
+    }
+    &:hover {
+        color: $color-1;
+    }
+}
+
+.btn {
+    top: -15rem;
+    left: 35%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    @include desktop {
+        left: 52rem;
+        font-size: 2rem;
+    }
+    position: relative;
+    border: 1px solid $color-1;
+    color: $color-2;
+    background-color: rgba($color: $color-4,
+    $alpha: 0.6);
+    &:hover {
+        color: $color-1;
+        background-color: rgba($color: $color-2, $alpha: 0.6);
+    }
+}

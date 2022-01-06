@@ -1,0 +1,26 @@
+.end {
+    display: block;
+    background: $color-1;
+    width: 100%;
+    height: 8vh;
+    font-size: 5vh;
+    text-align: center;
+    a {
+        color: $color-2;
+        margin: 2rem;
+        border-radius: 15%;
+        transition: all .4s;
+        &:hover:nth-child(1) {
+            color: #1da1f2;
+            text-shadow: 0 0 30px #1da1f2;
+        }
+        &:hover:nth-child(2) {
+            color: #c32aa3;
+            text-shadow: 0 0 30px #c32aa3;
+        }
+        &:hover:nth-child(3) {
+            color: #25d366;
+            text-shadow: 0 0 30px #25d366;
+        }
+    }
+}

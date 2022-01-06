@@ -1,0 +1,55 @@
+.nav {
+    display: flex;
+    @include tablet {
+        flex-direction: row;
+    }
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background: $color-1;
+    padding: $separacion/4 $separacion;
+}
+
+.logo {
+    display: flex;
+    img {
+        padding-left: 4rem;
+        height: 5rem;
+        width: auto;
+    }
+}
+
+#logo2 {
+    display: none;
+    transform: scale(1);
+    @include tablet {
+        display: block;
+    }
+}
+
+.navegacion {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    a {
+        margin: $separacion / 4;
+        color: $color-2;
+        &:hover {
+            color: $color-5;
+        }
+    }
+    input[type=text] {
+        display: none;
+    }
+}
+
+.cart {
+    margin: 1.5rem 0 0 0;
+    background: transparent;
+    border-style: none;
+    color: $color-2;
+    cursor: pointer;
+    &:hover {
+        color: $color-5;
+    }
+}

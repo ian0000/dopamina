@@ -1,0 +1,107 @@
+//referencias
+.referencia {
+    font-size: 1rem;
+    color: $color-2;
+}
+
+.separacion {
+    margin-bottom: 10rem;
+}
+
+//cartas
+.cartas-nosotros {
+    @include tablet {
+        @include grid(3, 2rem);
+        justify-content: space-between;
+        color: red;
+    }
+}
+
+h2 {
+    font-weight: $black;
+    font-size: 3rem;
+    width: 100%;
+    background-color: $color-2;
+    margin-top: -8rem;
+}
+
+.carta {
+    background-color: $color-2;
+    border-radius: 2.4rem;
+    border: $color-1 1px solid;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    &:last-of-type {
+        column-gap: 7rem;
+    }
+    img {
+        width: 100%;
+        animation: float 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
+        @include tablet {
+            height: 30rem;
+        }
+    }
+    .stock {
+        text-align: end;
+        color: $color-1;
+        padding: 0rem 2rem 0rem 1rem;
+        margin: 1rem 0 0;
+    }
+    .datos {
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        color: $color-2;
+        background-color: $color-4;
+        padding: 0rem 1rem 1rem 1rem;
+        border-radius: 0 0 2rem 2rem;
+        h4 {
+            position: relative;
+            text-align: end;
+            padding: 1rem 2rem 0rem 0rem;
+            margin: 0;
+        }
+        h3 {
+            margin: 0;
+            font-size: 4rem;
+            padding: 0;
+        }
+        .descripcion {
+            flex: 1;
+        }
+    }
+}
+
+.conteo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    i {
+        margin: 0 2rem;
+        cursor: pointer;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateZ(20px);
+    }
+    100% {
+        transform: translateY(-10px) translateX(-5px) translateZ(30px);
+    }
+}
+
+.grid {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 1rem;
+    img {
+        cursor: pointer;
+        margin: 0 1rem;
+        height: 4rem;
+        width: auto;
+    }
+}

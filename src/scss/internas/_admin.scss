@@ -1,0 +1,77 @@
+.alerta {
+    padding: .5rem;
+    text-align: center;
+    color: $color-2;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    &.error {
+        color: $color-6;
+    }
+    &.exito {
+        color: $color-5;
+    }
+    &.empty{
+        color: $color-7;
+    }
+}
+
+.imagen-small {
+    width: 20rem;
+}
+
+th,
+td {
+    padding: 3rem;
+    border: $color-1 solid 1px;
+    text-align: center;
+}
+
+// td:last-of-type {
+//     border: none;
+// }
+table {
+    border-collapse: collapse;
+    text-transform: uppercase;
+}
+
+.btn-verde,
+.btn-rojo,
+.btn-agregar,
+.btn-volver {
+    font-size: 1.5rem;
+    display: inline-block;
+    border: 1px solid $color-1;
+    text-transform: uppercase;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    color: $color-1;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.btn-agregar {
+    float: right;
+    background: $color-7;
+}
+
+.crud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-volver {
+    background: $color-6;
+    width: 10rem;
+}
+
+.btn-verde {
+    margin-top: 2rem;
+    padding: 0.3rem 1.06rem;
+    background: $color-5;
+}
+
+.btn-rojo {
+    background: $color-6;
+}

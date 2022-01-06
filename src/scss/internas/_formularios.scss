@@ -1,0 +1,30 @@
+.formulario {
+    fieldset {
+        margin-top: 0;
+        width: 30rem;
+        @include tablet {
+            width: 70rem;
+        }
+    }
+    input[type=file] {
+        color: $color-1;
+    }
+    legend {
+        color: $color-7;
+    }
+    &.contacto{
+        padding:  21rem 0 18rem 0;
+    }
+}
+
+.login {
+    height: 20rem;
+    padding-bottom: 50rem;
+}
+.padtop{
+    padding-top: 15rem;
+}
+
+label {
+    color: $color-1;
+}
