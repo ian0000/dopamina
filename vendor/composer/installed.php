@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fa7bcbfdf1f38d7d7c5c1d224eddfe4e7ab068cb',
+        'reference' => 'd5e47ebcc812b7104507ec72072c5a8e02894999',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fa7bcbfdf1f38d7d7c5c1d224eddfe4e7ab068cb',
+            'reference' => 'd5e47ebcc812b7104507ec72072c5a8e02894999',
             'dev_requirement' => false,
         ),
         'aws/aws-crt-php' => array(
