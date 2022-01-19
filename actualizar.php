@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES
         var_dump($upload);
         ?>
         <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
-<?php } catch(Exception $e) { ?>
+<?php } catch(Exception $e) { echo $e?>
         <p>Upload error :(</p>
 <?php } } ?>
         <h2>Upload a file</h2>
