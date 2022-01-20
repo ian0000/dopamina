@@ -29,9 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			'SourceFile' => $_FILES['file']['tmp_name']
 		]); 
     }
-    
-	print_r($uploadObject); 
-    var_dump($_FILES);
+    var_dump($uploadObject);
 } ?>
         <h2>Upload a file</h2>
         <form enctype="multipart/form-data" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
