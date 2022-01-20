@@ -7,7 +7,7 @@ if (!$auth) {
 }
 
 require '../includes/config/database.php';
-require('../../vendor/autoload.php');
+require('../vendor/autoload.php');
 use Aws\S3\S3Client; 
 use Aws\Exception\AwsException; 
 $s3 = new Aws\S3\S3Client([
