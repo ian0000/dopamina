@@ -2,7 +2,14 @@
 require '../../includes/funciones.php';
 require '../../includes/config/database.php';
 
-
+require('../../vendor/autoload.php');
+use Aws\S3\S3Client; 
+use Aws\Exception\AwsException; 
+$s3 = new Aws\S3\S3Client([
+    'version'  => 'latest',
+    'region'   => 'us-east-2', 
+]);
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 $auth = autenticacion();
 if(!$auth){
@@ -48,15 +55,26 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     }
     $nombreImagen = $file['name'];
     if(empty($errores)){
-        $imagen = addslashes(file_get_contents($_FILES['file']['tmp_name']));
-        
-        
-        $query = "INSERT INTO ropa(nombre, ropacol, precio, cantidad, descuento, descripcion, imagen) VALUES('$nombre','$imagen','$precio','$cantidad','$descuento','$descripcion','$nombreImagen');";
-        $resultado = mysqli_query($db, $query);
-      
+        try {
+            if(isset($_FILES['userfile'])){
+                $uploadObject = $s3->putObject(
+                    [
+                        'Bucket' => 's3-demo-dopa',
+                        'Key' => $_FILES['userfile']['name'],
+                        'SourceFile' => $_FILES['userfile']['tmp_name']
+                    ]); 
 
-        if ($resultado) {
-            header('Location:../index.php?resultado=1');
+                var_dump($uploadObject); 
+                $query = "INSERT INTO ropa(nombre, ropacol, precio, cantidad, descuento, descripcion, imagen) VALUES('$nombre','$imagen','$precio','$cantidad','$descuento','$descripcion','$nombreImagen');";
+                $resultado = mysqli_query($db, $query);
+              
+        
+                if ($resultado) {
+                    header('Location:../index.php?resultado=1');
+                }
+            }
+        } catch (Exception $e) {
+            $errores[] = 'Error al subir la imagen'.$e;
         }
     }
 }
