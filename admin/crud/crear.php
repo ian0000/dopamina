@@ -64,14 +64,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                         'SourceFile' => $_FILES['file']['tmp_name']
                     ]); 
                     $linkS3 = $uploadObject['ObjectURL'];
-                var_dump($uploadObject); 
+                var_dump($linkS3); 
                 $query = "INSERT INTO ropa(nombre, ropacol, precio, cantidad, descuento, descripcion, imagen) VALUES('$nombre','$linkS3','$precio','$cantidad','$descuento','$descripcion','$nombreImagen');";
                 $resultado = mysqli_query($db, $query);
               
-        
-                if ($resultado) {
-                    header('Location:../index.php?resultado=1');
-                }
+                    var_dump($query);
+                // if ($resultado) {
+                //     header('Location:../index.php?resultado=1');
+                // }
             }
         } catch (Exception $e) {
             $errores[] = 'Error al subir la imagen'.$e;
