@@ -7,6 +7,14 @@ if (!$auth) {
 }
 
 require '../includes/config/database.php';
+require('../../vendor/autoload.php');
+use Aws\S3\S3Client; 
+use Aws\Exception\AwsException; 
+$s3 = new Aws\S3\S3Client([
+    'version'  => 'latest',
+    'region'   => 'us-east-2', 
+]);
+$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 $db = conectarDB();
 $query = "SELECT * FROM ropa";
@@ -65,7 +73,7 @@ incluirTemplate('headerAdmin');
                 <tr>
                     <td><?php echo $ropa['id']; ?></td>
                     <td><?php echo $ropa['nombre']; ?></td>
-                    <td><img src="data:image/jpg;base64,<?php echo base64_encode($ropa['ropacol']);?>" class="imagen-small" alt="imagen"></td>
+                    <td><img src="<?php 'IMGURL'. $ropa['ropacol']; ?>" class="imagen-small" alt="imagen"></td>
                     <td><?php echo $ropa['precio']; ?></td>
                     <td><?php echo $ropa['cantidad']; ?></td>
                     <td><?php echo $ropa['descuento']; ?></td>
