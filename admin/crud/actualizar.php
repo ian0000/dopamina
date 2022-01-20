@@ -27,8 +27,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'SourceFile' => $_FILES['userfile']['tmp_name']
                 ]); 
 
-            var_dump($uploadObject['ObjectUrl']); 
-            var_dump($uploadObject['ObjectUrl'].PHP_EOL); 
+            var_dump($uploadObject['ObjectURL']); 
+            var_dump($uploadObject['ObjectURL'].PHP_EOL); 
         }
         ?>
         <p>Upload <a href="<?=htmlspecialchars($uploadObject->get('ObjectURL'))?>">successful</a> :)</p>
