@@ -56,12 +56,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $nombreImagen = $file['name'];
     if(empty($errores)){
         try {
-            if(isset($_FILES['userfile'])){
+            if(isset($_FILES['file'])){
                 $uploadObject = $s3->putObject(
                     [
                         'Bucket' => 's3-demo-dopa',
-                        'Key' => $_FILES['userfile']['name'],
-                        'SourceFile' => $_FILES['userfile']['tmp_name']
+                        'Key' => $_FILES['file']['name'],
+                        'SourceFile' => $_FILES['file']['tmp_name']
                     ]); 
 
                 var_dump($uploadObject); 
