@@ -21,7 +21,7 @@ var_dump($bucket);
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     var_dump($_FILES);
     try {
-        if(isset($_FILES['file']))
+        if(isset($_FILES['userfile']))
         {
             $uploadObject = $s3->putObject(
                 [
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'SourceFile' => $_FILES['userfile']['tmp_name']
                 ]); 
 
-            print_r($uploadObject); 
+            var_dump($uploadObject); 
         }
         ?>
         <p>Upload <a href="<?=htmlspecialchars($uploadObject->get('ObjectURL'))?>">successful</a> :)</p>
