@@ -73,7 +73,7 @@ incluirTemplate('headerAdmin');
                 <tr>
                     <td><?php echo $ropa['id']; ?></td>
                     <td><?php echo $ropa['nombre']; ?></td>
-                    <td><img src="<?php 'IMGURL'. $ropa['ropacol']; ?>" class="imagen-small" alt="imagen"></td>
+                    <!-- <td><img src="<?php 'IMGURL'. $ropa['ropacol']; ?>" class="imagen-small" alt="imagen"></td> -->
                     <td><?php echo $ropa['precio']; ?></td>
                     <td><?php echo $ropa['cantidad']; ?></td>
                     <td><?php echo $ropa['descuento']; ?></td>
