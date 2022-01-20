@@ -18,15 +18,22 @@ var_dump($bucket);
     <body>
         <h1>S3 upload example</h1>
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-    // FIXME: you should add more of your own validation here, e.g. using ext/fileinfo
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     var_dump($_FILES);
     try {
-        // FIXME: you should not use 'name' for the upload, since that's the original filename from the user's computer - generate a random filename that you then store in your database, or similar
-        $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-        var_dump($upload);
+        if(isset($_FILES['file']))
+        {
+            $uploadObject = $s3->putObject(
+                [
+                    'Bucket' => 's3-demo-dopa',
+                    'Key' => $_FILES['userfile']['name'],
+                    'SourceFile' => $_FILES['userfile']['tmp_name']
+                ]); 
+
+            print_r($uploadObject); 
+        }
         ?>
-        <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
+        <p>Upload <a href="<?=htmlspecialchars($uploadObject->get('ObjectURL'))?>">successful</a> :)</p>
 <?php } catch(Exception $e) { echo $e ?>
         <p>Upload error :(</p>
 <?php } } ?>
