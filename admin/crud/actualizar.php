@@ -1,5 +1,5 @@
 <?php
-require('vendor/autoload.php');
+require('../../vendor/autoload.php');
 // this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
 use Aws\S3\S3Client; 
 use Aws\Exception\AwsException; 
@@ -13,10 +13,7 @@ $s3 = new Aws\S3\S3Client([
 $bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 var_dump($bucket);
 ?>
-<html>
-    <head><meta charset="UTF-8"></head>
-    <body>
-        <h1>S3 upload example</h1>
+
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     var_dump($_FILES);
