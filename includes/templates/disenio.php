@@ -1,6 +1,8 @@
 <?php
 //importa la conexion 
 require __DIR__ . '/../config/database.php';
+
+define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com/");
 $db = conectarDB();
 $query = "SELECT * FROM ropa ORDER BY id DESC LIMIT ${limite}";
 $resultado = mysqli_query($db, $query);
@@ -14,7 +16,7 @@ $resultado = mysqli_query($db, $query);
     ?>
         <div class="carta">
             <p class="stock">stock: <?php echo $ropa['cantidad']; ?></p>
-            <img loading="lazy" src="data:image/jpg;base64,<?php echo base64_encode($ropa['ropacol']);?>" alt="scrub de x parte" loading="lazy">
+            <?php echo "<td><img src='".IMAGE_URL."".$ropa['imagen']."' class='imagen-small'></td>"?>
             <div class="datos">
                 <h4> $<?php echo $ropa['precio']; ?></h4>
                 <h3><?php echo $ropa['nombre']; ?></h3>
