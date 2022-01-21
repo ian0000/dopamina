@@ -84,7 +84,7 @@ incluirTemplate('headerAdmin');
                     <td><?php echo $ropa['descuento']; ?></td>
                     <td><?php echo $ropa['descripcion']; ?></td>
                     <td>
-                        <a href="propiedades/actualizar.php?id=<?php echo $ropa['id']; ?>" class="btn-verde">actualizar</a>
+                        <a href="crud/actualizar.php?id=<?php echo $ropa['id']; ?>" class="btn-verde">actualizar</a>
                         <form method="POST" class="w-100">
                             <input type="hidden" name="id" value="<?php echo $ropa['id']; ?>">
                             <input type="submit" class="btn-rojo" value="Eliminar">

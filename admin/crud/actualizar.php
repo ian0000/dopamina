@@ -74,12 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($imagen['name']){
 
             $data = $_FILES['file']['name'];
-                list($filename, $filetype) = explode(".",$data);
-                $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
+            list($filename, $filetype) = explode(".",$data);
+            $nombreImagen = md5(uniqid(rand(),true));
             $uploadObject = $s3->putObject(
                         [
                             'Bucket' => 's3-demo-dopa',
-                            'Key' => $nombreImagen,
+                            'Key' => $nombreImagen.".".$filetype,
                             'SourceFile' => $_FILES['file']['tmp_name']
                         ]); 
                         $linkS3 = $uploadObject['ObjectURL'];
