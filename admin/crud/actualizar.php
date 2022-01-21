@@ -75,25 +75,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $data = $_FILES['file']['name'];
             list($filename, $filetype) = explode(".",$data);
-            $nombreImagen = md5(uniqid(rand(),true));
+            $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
             $uploadObject = $s3->putObject(
                         [
                             'Bucket' => 's3-demo-dopa',
-                            'Key' => $nombreImagen.".".$filetype,
+                            'Key' => $nombreImagen,
                             'SourceFile' => $_FILES['file']['tmp_name']
                         ]); 
                         $linkS3 = $uploadObject['ObjectURL'];
+                        var_dump($linkS3);
+                        var_dump($nombreImagen);
         }else{
             
             $nombreImagen = $ropa['imagen'];
         }
 
-        $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}.${filetype}' WHERE id = ${id};";
-        $resultado = mysqli_query($db, $query);
+        // $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}.${filetype}' WHERE id = ${id};";
+        // $resultado = mysqli_query($db, $query);
 
-        if ($resultado) {
-            header('Location:/admin?resultado=2');
-        }
+        // if ($resultado) {
+        //     header('Location:/admin?resultado=2');
+        // }
     }
 }
 incluirTemplate('headerCrud');
