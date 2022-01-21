@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         [
                             'Bucket' => 's3-demo-dopa',
                             'Key' => $nombreImagen,
-                            'SourceFile' => $imagen['name']['tmp_name']
+                            'SourceFile' => $imagen['tmp_name']
                         ]); 
                         $linkS3 = $uploadObject['ObjectURL'];
                         var_dump($linkS3);
