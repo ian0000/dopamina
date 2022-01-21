@@ -74,7 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($imagen['name']){
 
             $data = $_FILES['file']['name'];
+            var_dump($data);
+            
             list($filename, $filetype) = explode(".",$data);
+            var_dump($filename, $filetype);
             $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
             $uploadObject = $s3->putObject(
                         [
