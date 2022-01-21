@@ -1,6 +1,6 @@
 <?php
 require '../includes/funciones.php';
-
+define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com");
 $auth = autenticacion();
 if (!$auth) {
     header('Location:/');
@@ -70,16 +70,7 @@ incluirTemplate('headerAdmin');
                 <tr>
                     <td><?php echo $ropa['id']; ?></td>
                     <td><?php echo $ropa['nombre']; ?></td>
-                    <?php $filename = $ropa['imagen'];
-                        $command = $s3->getCommand('GetObject', array(
-                                'Bucket'      => 's3-demo-dopa',
-                                'Key'         => $fileName,
-                                'ResponseContentDisposition' => 'attachment; filename="'.$fileName.'"'
-                             ));
-                        $signedUrl = $s3->createPresignedRequest($command, "+6 days");
-                        $presignedUrl = (string)$signedUrl->getUri(); 
-                    ?>
-                    <td><img src="'.$presignedUrl.'" class="imagen-small" alt="imagen de <?php echo $ropa['imagen']?>"></td>
+                    <?php echo "<td><img src='".IMAGE_URL."".$ropa['imagen']."' class='imagen-small'></td>"?>
                     <td><?php echo $ropa['precio']; ?></td>
                     <td><?php echo $ropa['cantidad']; ?></td>
                     <td><?php echo $ropa['descuento']; ?></td>
