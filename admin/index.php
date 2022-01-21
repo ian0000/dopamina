@@ -1,6 +1,6 @@
 <?php
 require '../includes/funciones.php';
-define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com");
+define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com/");
 $auth = autenticacion();
 if (!$auth) {
     header('Location:/');
