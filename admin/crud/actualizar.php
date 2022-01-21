@@ -73,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // generar nombre unico
         if($imagen['name']){
 
-            $data = $_FILES['file']['name'];
+            var_dump($imagen['name']);
+            $data = $imagen['name'];
             var_dump($data);
             
             list($filename, $filetype) = explode(".",$data);
