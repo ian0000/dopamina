@@ -73,12 +73,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // generar nombre unico
         if($imagen['name']){
 
-            var_dump($imagen['name']);
             $data = $imagen['name'];
-            var_dump($data);
             
             list($filename, $filetype) = explode(".",$data);
-            var_dump($filename, $filetype);
             $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
             $uploadObject = $s3->putObject(
                         [
@@ -94,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombreImagen = $ropa['imagen'];
         }
 
-        $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}.${filetype}' WHERE id = ${id};";
+        $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}' WHERE id = ${id};";
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
