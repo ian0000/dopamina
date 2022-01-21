@@ -18,9 +18,9 @@ $auth = autenticacion();
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-if (!$id || !$auth) {
-    header('Location:/admin');
-}
+// if (!$id || !$auth) {
+//     header('Location:/admin');
+// }
 
 $db = conectarDB();
 //consultar la ropa
@@ -79,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             list($filename, $filetype) = explode(".",$data);
             var_dump($filename, $filetype);
             $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
-            $uploadObject = $s3->putObject(
-                        [
-                            'Bucket' => 's3-demo-dopa',
-                            'Key' => $nombreImagen,
-                            'SourceFile' => $_FILES['file']['tmp_name']
-                        ]); 
-                        $linkS3 = $uploadObject['ObjectURL'];
+            // $uploadObject = $s3->putObject(
+            //             [
+            //                 'Bucket' => 's3-demo-dopa',
+            //                 'Key' => $nombreImagen,
+            //                 'SourceFile' => $_FILES['file']['tmp_name']
+            //             ]); 
+            //             $linkS3 = $uploadObject['ObjectURL'];
                         var_dump($linkS3);
                         var_dump($nombreImagen);
         }else{
