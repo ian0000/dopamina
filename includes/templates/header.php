@@ -22,7 +22,7 @@ $auth = $_SESSION['login'] ?? false;
 <body>
     <header class=" header ">
         <div class="nav ">
-            <a class="logo" href="/ugh/ ">
+            <a class="logo" href="/ ">
                 <img id="logo1" src="dist/img/logo.png" alt="Logotipo de rayo" onclick="data()">
                 <img id=" logo2" src="dist/img/DOPAMINA.png" alt="Logotipo de scrubs " onclick="data()">
             </a>
