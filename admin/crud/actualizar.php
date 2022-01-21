@@ -18,9 +18,9 @@ $auth = autenticacion();
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
 
-// if (!$id || !$auth) {
-//     header('Location:/admin');
-// }
+if (!$id || !$auth) {
+    header('Location:/admin');
+}
 
 $db = conectarDB();
 //consultar la ropa
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         [
                             'Bucket' => 's3-demo-dopa',
                             'Key' => $nombreImagen,
-                            'SourceFile' => $_FILES['file']['tmp_name']
+                            'SourceFile' => $imagen['name']['tmp_name']
                         ]); 
                         $linkS3 = $uploadObject['ObjectURL'];
                         var_dump($linkS3);
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombreImagen = $ropa['imagen'];
         }
 
-        $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}' WHERE id = ${id};";
+        $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen} ' WHERE id = ${id};";
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
