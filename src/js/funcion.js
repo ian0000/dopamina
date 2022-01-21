@@ -18,7 +18,7 @@ function retrieve(valor, id) {
 }
 
 function carrito(id) {
-    sumaTotal = 0;
+    let sumaTotal = 0;
     value = parseInt(document.getElementById('value-' + id).innerText);
     if (carro.length > 0) {
         i = 0;

@@ -57,18 +57,19 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     if(empty($errores)){
         try {
             if(isset($_FILES['file'])){
+                $data = $_FILES['file']['name'];
+                list($filename, $filetype) = explode(".",$data);
+                $nombreImagen = md5(uniqid(rand(),true)).$filetype;
                 $uploadObject = $s3->putObject(
                     [
                         'Bucket' => 's3-demo-dopa',
-                        'Key' => $_FILES['file']['name'],
+                        'Key' => $nombreImagen,
                         'SourceFile' => $_FILES['file']['tmp_name']
                     ]); 
                     $linkS3 = $uploadObject['ObjectURL'];
-                var_dump($linkS3); 
                 $query = "INSERT INTO ropa(nombre, ropacol, precio, cantidad, descuento, descripcion, imagen) VALUES('$nombre','$linkS3','$precio','$cantidad','$descuento','$descripcion','$nombreImagen');";
                 $resultado = mysqli_query($db, $query);
               
-                    var_dump($query);
                 if ($resultado) {
                     header('Location:../index.php?resultado=1');
                 }

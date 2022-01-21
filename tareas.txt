@@ -5,6 +5,8 @@ actualizarRopa -u
 actualizarUsuario -u
 crearRopaUsuario -u
 
+hacer carrousel de las tarjetas-c
+
 pedidos -g
 
 tests? -g
