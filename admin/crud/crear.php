@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             if(isset($_FILES['file'])){
                 $data = $_FILES['file']['name'];
                 list($filename, $filetype) = explode(".",$data);
-                $nombreImagen = md5(uniqid(rand(),true)).$filetype;
+                $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
                 $uploadObject = $s3->putObject(
                     [
                         'Bucket' => 's3-demo-dopa',

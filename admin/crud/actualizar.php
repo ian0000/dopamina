@@ -71,14 +71,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //subida de archivos
 
         // generar nombre unico
-        $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-        $uploadObject = $s3->putObject(
-                    [
-                        'Bucket' => 's3-demo-dopa',
-                        'Key' => $nombreImagen,
-                        'SourceFile' => $_FILES['file']['tmp_name']
-                    ]); 
-                    $linkS3 = $uploadObject['ObjectURL'];
+        if($imagen['name']){
+
+            $data = $_FILES['file']['name'];
+            list($filename, $filetype) = explode(".",$data);
+            $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
+            $uploadObject = $s3->putObject(
+                        [
+                            'Bucket' => 's3-demo-dopa',
+                            'Key' => $nombreImagen,
+                            'SourceFile' => $_FILES['file']['tmp_name']
+                        ]); 
+                        $linkS3 = $uploadObject['ObjectURL'];
+        }else{
+            
+            $nombreImagen = $ropa['imagen'];
+        }
 
         $query = "UPDATE ropa SET nombre = '${nombre}',ropacol = '${$linkS3}',precio = '${precio}',cantidad = '${cantidad}',descuento = '${descuento}',descripcion = '${descripcion}',imagen = '${nombreImagen}' WHERE id = ${id};";
         $resultado = mysqli_query($db, $query);
