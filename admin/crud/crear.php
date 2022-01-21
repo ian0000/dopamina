@@ -69,9 +69,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 $resultado = mysqli_query($db, $query);
               
                     var_dump($query);
-                // if ($resultado) {
-                //     header('Location:../index.php?resultado=1');
-                // }
+                if ($resultado) {
+                    header('Location:../index.php?resultado=1');
+                }
             }
         } catch (Exception $e) {
             $errores[] = 'Error al subir la imagen'.$e;
@@ -110,7 +110,7 @@ incluirTemplate('headerCrud');
             <input type="number" name="descuento" id="descuento" placeholder="Descuento..." value="<?php echo $descuento ?>">
 
             <label for="descripcion">Descripcion:</label>
-            <textarea name="descripcion" id="descripcion"><?php echo $descuento ?></textarea>
+            <textarea name="descripcion" id="descripcion"><?php echo $descripcion ?></textarea>
 
         </fieldset>
         <input type="submit" value="Crear Ropa" class="btn-verde">    

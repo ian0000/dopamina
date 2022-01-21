@@ -14,7 +14,6 @@ $s3 = new Aws\S3\S3Client([
     'version'  => 'latest',
     'region'   => 'us-east-2', 
 ]);
-$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
 
 $db = conectarDB();
 $query = "SELECT * FROM ropa";
@@ -30,8 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "SELECT imagen FROM ropa WHERE id = ${id};";
         $resultado = mysqli_query($db, $query);
         $ropa = mysqli_fetch_assoc($resultado);
-
-        unlink('../imagenes/' . $ropa['imagen']);
 
         $query = "DELETE FROM ropa WHERE id = ${id};";
         $resultado = mysqli_query($db, $query);
@@ -73,7 +70,16 @@ incluirTemplate('headerAdmin');
                 <tr>
                     <td><?php echo $ropa['id']; ?></td>
                     <td><?php echo $ropa['nombre']; ?></td>
-                    <td><img src="<?php 'IMGURL'. $ropa['ropacol']; ?>" class="imagen-small" alt="imagen"></td>
+                    <?php $filename = $ropa['imagen'];
+                        $command = $s3->getCommand('GetObject', array(
+                                'Bucket'      => 's3-demo-dopa',
+                                'Key'         => $fileName,
+                                'ResponseContentDisposition' => 'attachment; filename="'.$fileName.'"'
+                             ));
+                        $signedUrl = $s3->createPresignedRequest($command, "+6 days");
+                        $presignedUrl = (string)$signedUrl->getUri(); 
+                    ?>
+                    <td><img src="'.$presignedUrl.'zgit" class="imagen-small" alt="imagen de <?php echo $ropa['imagen']?>"></td>
                     <td><?php echo $ropa['precio']; ?></td>
                     <td><?php echo $ropa['cantidad']; ?></td>
                     <td><?php echo $ropa['descuento']; ?></td>
