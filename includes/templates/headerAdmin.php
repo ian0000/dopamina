@@ -42,7 +42,7 @@ $auth = $_SESSION['login'] ?? false;
                     <?php
                     } ?>
                     
-                    <a href="https://dopamina3.herokuapp.com/admin/index.php">Administrar</a>
+                    <a href="../admin/index.php">Administrar</a>
 
                 </nav>
             </div>
