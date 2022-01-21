@@ -79,7 +79,7 @@ incluirTemplate('headerAdmin');
                         $signedUrl = $s3->createPresignedRequest($command, "+6 days");
                         $presignedUrl = (string)$signedUrl->getUri(); 
                     ?>
-                    <td><img src="'.$presignedUrl.'zgit" class="imagen-small" alt="imagen de <?php echo $ropa['imagen']?>"></td>
+                    <td><img src="'.$presignedUrl.'" class="imagen-small" alt="imagen de <?php echo $ropa['imagen']?>"></td>
                     <td><?php echo $ropa['precio']; ?></td>
                     <td><?php echo $ropa['cantidad']; ?></td>
                     <td><?php echo $ropa['descuento']; ?></td>
