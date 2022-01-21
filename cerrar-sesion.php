@@ -3,4 +3,4 @@ session_start();
 $_SESSION = [];
 
 
-header('location:/ugh/');
+header('location:/');
