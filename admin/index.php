@@ -1,15 +1,23 @@
 <?php
 require '../includes/funciones.php';
-define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com/");
+require '../includes/config/database.php';
 $auth = autenticacion();
 if (!$auth) {
     header('Location:/');
 }
 
-require '../includes/config/database.php';
+
+//no creo que es necesario ya que guardo el nombre en la base y de ahi llamo el link nunca uso aws ....creo
+//desde aqui llamo al bucket s3 
+//defino la direccion que voy a aumentar el nombre para dirigirme ahi
+define('IMAGE_URL',"https://s3-demo-dopa.s3.us-east-2.amazonaws.com/");
+//llamo a la carpeta que mecrea el composer
 require('../vendor/autoload.php');
 use Aws\S3\S3Client; 
+//libreria de aws para los errores no se a usado aun 
 use Aws\Exception\AwsException; 
+
+//llamo a las credenciales 
 $s3 = new Aws\S3\S3Client([
     'version'  => 'latest',
     'region'   => 'us-east-2', 

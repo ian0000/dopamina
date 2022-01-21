@@ -1,10 +1,6 @@
 (-g = general; -c = cliente; -u = admin; -t = templates)
 -- por hacer
-
-bucket de aws -g generar la bucket y enlazarla
-
 actualizarRopa -u
-crearRopa -u
 
 actualizarUsuario -u
 crearRopaUsuario -u
@@ -22,9 +18,10 @@ databasecon -a cambiar los datos de la db en heroku
 revisar que las vistas funcionen correctamente en los distintos disp
 cambiar el navbar para que se recoja cuando es cel 
 que el navbar se mueva con la posicion de la pantalla
--- funciona
 index -u
 carrito -c
+-- funciona
+crearRopa -u
 contacto -g 
 coleccion -c
 disenio -t
@@ -32,7 +29,6 @@ footer -t
 header -t
 index -g
 login -u
+bucket de aws -g generar la bucket y enlazarla - por seguridad no deberia ser publico el bucket pero funciona asi 
 -- corregido
 -- finalizado
-
-
