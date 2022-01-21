@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($imagen['name']){
 
             $data = $_FILES['file']['name'];
-            list($filename, $filetype) = explode(".",$data);
-            $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
+                list($filename, $filetype) = explode(".",$data);
+                $nombreImagen = md5(uniqid(rand(),true)).".".$filetype;
             $uploadObject = $s3->putObject(
                         [
                             'Bucket' => 's3-demo-dopa',
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-incluirTemplate('header');
+incluirTemplate('headerCrud');
 ?>
 <main class="contenedor seccion crud">
     <h1>Actualiza una coleccion</h1>
