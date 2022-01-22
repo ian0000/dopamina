@@ -35,30 +35,22 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         var_dump($emailhost);
 
         $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
-        try {
-            $mail = new PHPMailer();
-            $mail->isSMTP();
-            $mail->Host = $emailhost;
-            $mail->SMTPAuth = "true";
-            $mail->SMTPSecure = "tls";
-$mail->Port = "587";
-            $mail->Username = $emailuser;
-            $mail->Password = $emailpass;
-            $mail->Subject = "Test Email";
-            $mail->setFrom($emailuser);
-            $mail->Body = $mensajefinal;
-            $mail->addAddress("niklas0617@gmail.com");
-            $mail->send();
-            if ($mail->Send()) {
-                echo "mail sent";
-            } else{
-                var_dump($mail->send());
-            }
-            echo $mail->Body;
-            
-            echo "ahhhhh";
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = $emailhost;
+        $mail->SMTPAuth = "true";
+        $mail->SMTPSecure = "tls";
+        $mail->Port = "587";
+        $mail->Username = $emailuser;
+        $mail->Password = $emailpass;
+        $mail->Subject = "Test Email";
+        $mail->setFrom($emailuser);
+        $mail->Body = "this is a test";
+        $mail->addAddress("niklas0617@gmail.com");
+        if ($mail->Send()) {
+            echo "mail sent";
+        } else{
+            echo "error";
         }
     }
 }
