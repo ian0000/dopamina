@@ -25,9 +25,11 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $errores[] = 'Debes agregar un mensaje';
     }
     if(empty($errores)){
-        // $emailuser = getenv('EMAILUSERNAME');
-        // $emailpass = getenv('EMAILPASSWORD');
-        // $emailhost = getenv("EMAILHOST");
+        $emailuser = getenv('EMAILUSERNAME');
+        $emailpass = getenv('EMAILPASSWORD');
+        $emailhost = getenv("EMAILHOST");
+
+        echo $emailuser.$emailpass.$emailhost;
         // try {
         //     $mail = new PHPMailer();
         //     $mail->isSMTP();
