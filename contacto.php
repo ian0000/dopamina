@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             if ($mail->Send()) {
                 echo "mail sent";
             } else{
-                echo "error";
+                var_dump($mail->send());
             }
             echo $mail->Body;
             
