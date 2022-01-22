@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailpass = getenv('EMAILPASSWORD');
         $emailhost = getenv("EMAILHOST");
         
-var_dump($emailhost);
+        var_dump($emailhost);
 
         $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
         try {
@@ -41,6 +41,7 @@ var_dump($emailhost);
             $mail->Host = $emailhost;
             $mail->SMTPAuth = "true";
             $mail->SMTPSecure = "tls";
+$mail->Port = "587";
             $mail->Username = $emailuser;
             $mail->Password = $emailpass;
             $mail->Subject = "Test Email";
