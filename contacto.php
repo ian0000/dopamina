@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailpass = getenv('EMAILPASSWORD');
         $emailhost = getenv("EMAILHOST");
 
-        echo "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
+        $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
         try {
             $mail = new PHPMailer();
             $mail->isSMTP();
@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $mail->Password = $emailpass;
             $mail->Subject = "Test Email";
             $mail->setFrom($emailuser);
-            $mail->Body = "correo: ".$correo."\n"."nombre: ".$nombre."\n"."celular: ".$celular."\n"."mensaje: ".$mensaje;
+            $mail->Body = $mensajefinal;
             $mail->addAddress("niklas0617@gmail.com");
             if ($mail->Send()) {
                 echo "mail sent";
