@@ -36,15 +36,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         try {
             $mail = new PHPMailer();
             $mail->isSMTP();
-            $mail->Host = $emailhost;
+            $mail->Host = "${emailhost}";
             $mail->SMTPAuth = "true";
             $mail->SMTPSecure = "tls";
-            $mail->Port = "587";
-            $mail->Username = $emailuser;
-            $mail->Password = $emailpass;
+            $mail->Username = "${emailuser}";
+            $mail->Password = "${emailpass}";
             $mail->Subject = "Test Email";
-            $mail->setFrom($emailuser);
-            $mail->Body = $mensajefinal;
+            $mail->setFrom("${emailuser}");
+            $mail->Body = "${mensajefinal}";
             $mail->addAddress("niklas0617@gmail.com");
             if ($mail->Send()) {
                 echo "mail sent";
