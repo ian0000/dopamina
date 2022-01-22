@@ -52,7 +52,7 @@ incluirTemplate('header');
         <?php echo $exito ?>
     </div>
 <?php }?>
-<form action="https://formspree.io/f/mbjqqrkg" method="POST" class="formulario contacto">
+<form action="https://formspree.io/f/mbjqqrkg"  method="POST" class="formulario contacto">
     <fieldset>
         <legend>Envianos un Mensaje</legend>
         <label for="nombre">Nombre y Apellido</label>
@@ -64,9 +64,13 @@ incluirTemplate('header');
         <label for="mensaje">Tu Mensaje <span>*</span></label>
         <textarea name="mensaje" id="mensaje" cols="30" rows="5" value="<?php echo $mensaje ?>"required></textarea>
     </fieldset>
-    <input type="submit" value="Enviar" class="btn-verde">
+    <input type="submit" value="Enviar" class="btn-verde" onclick="myFunction()"> 
 </form>
-
+<script>
+function myFunction() {
+  location.replace("/")
+}
+</script>
 <?php
 incluirTemplate('footer');
 ?>
