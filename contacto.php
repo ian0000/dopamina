@@ -1,7 +1,8 @@
 <?php
 require 'includes/funciones.php';
 require 'includes/config/database.php';
-$errores= [];
+$errores = [];
+$success = [];
 // variables del formulario
 
 $db = conectarDB();
@@ -31,7 +32,11 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $query = "INSERT INTO contacto(nombre, correo, celular, mensaje) VALUES ('$nombre','$correo', '$celular', '$mensaje');";
         $resultado - mysqli_query($db, $query);
         if($resultado){
-            header('Location: contacto.php');
+            $success = "Se envio correctamente";
+            $nombre = '';
+            $correo = '';
+            $celular = '';
+            $mensaje='';
         }
     }
 }
@@ -42,17 +47,22 @@ incluirTemplate('header');
         <?php echo $error ?>
     </div>
 <?php }?>
+<?php foreach($success as $exito){ ?>
+    <div class="alerta exito">
+        <?php echo $exito ?>
+    </div>
+<?php }?>
 <form action="https://formspree.io/f/mbjqqrkg" method="POST" class="formulario contacto">
     <fieldset>
         <legend>Envianos un Mensaje</legend>
         <label for="nombre">Nombre y Apellido</label>
-        <input type="text" class="dato" name="nombre" placeholder="Tu Nombre aquí...." required>
+        <input type="text" class="dato" name="nombre" placeholder="Tu Nombre aquí...." value="<?php echo $nombre ?>" required>
         <label for="correo">Correo de Contacto<span>*</span></label>
-        <input type="email" class="dato" name="correo" placeholder="Tu Correo aquí...." required>
+        <input type="email" class="dato" name="correo" placeholder="Tu Correo aquí...." value="<?php echo $correo ?>"required>
         <label for="celular">Tu Número de Celular <span>*</span></label>
-        <input type="tel" class="dato" name="celular" placeholder="Tu Número Celular aquí...." required>
+        <input type="tel" class="dato" name="celular" placeholder="Tu Número Celular aquí...." value="<?php echo $celular ?>" required>
         <label for="mensaje">Tu Mensaje <span>*</span></label>
-        <textarea name="mensaje" id="mensaje" cols="30" rows="5" required></textarea>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="5" value="<?php echo $mensaje ?>"required></textarea>
     </fieldset>
     <input type="submit" value="Enviar" class="btn-verde">
 </form>
