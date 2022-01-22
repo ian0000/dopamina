@@ -30,28 +30,28 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailhost = getenv("EMAILHOST");
 
         echo "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
-        // try {
-        //     $mail = new PHPMailer();
-        //     $mail->isSMTP();
-        //     $mail->Host = $emailhost;
-        //     $mail->SMTPAuth = "true";
-        //     $mail->SMTPSecure = "tls";
-        //     $mail->Port = "587";
-        //     $mail->Username = $emailuser;
-        //     $mail->Password = $emailpass;
-        //     $mail->Subject = "Test Email";
-        //     $mail->setFrom($emailuser);
-        //     $mail->Body = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
-        //     $mail->addAddress("niklas0617@gmail.com");
-        //     if ($mail->Send()) {
-        //         echo "mail sent";
-        //     } else{
-        //         echo "error";
-        //     }
+        try {
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = $emailhost;
+            $mail->SMTPAuth = "true";
+            $mail->SMTPSecure = "tls";
+            $mail->Port = "587";
+            $mail->Username = $emailuser;
+            $mail->Password = $emailpass;
+            $mail->Subject = "Test Email";
+            $mail->setFrom($emailuser);
+            $mail->Body = "correo: ".$correo."\n"."nombre: ".$nombre."\n"."celular: ".$celular."\n"."mensaje: ".$mensaje;
+            $mail->addAddress("niklas0617@gmail.com");
+            if ($mail->Send()) {
+                echo "mail sent";
+            } else{
+                echo "error";
+            }
         echo "ahhhhh";
-        // } catch (Exception $e) {
-        //     $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
-        // }
+        } catch (Exception $e) {
+            $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
+        }
     }
 }
 incluirTemplate('header');
