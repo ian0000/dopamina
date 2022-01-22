@@ -33,11 +33,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $resultado = mysqli_query($db, $query);
         var_dump($resultado);
         if($resultado){
-            $success = "Se envio correctamente";
-            $nombre = '';
-            $correo = '';
-            $celular = '';
-            $mensaje='';
+            
+                    header('Location:/');
         }
     }
 }
