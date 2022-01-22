@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $mail->Password = getenv('EMAILPASSWORD');
             $mail->Subject = "Test Email";
             $mail->setFrom(getenv('EMAILUSERNAME'));
-            $mail->Body = "this is a test";
+            $mail->Body = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
             $mail->addAddress("niklas0617@gmail.com");
             if ($mail->Send()) {
                 echo "mail sent";
