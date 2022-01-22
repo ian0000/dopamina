@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $mail->addAddress("niklas0617@gmail.com");
             $mail->Send();
             
-            echo "se envio";
+            echo $mail->Body;
             
             echo "ahhhhh";
         } catch (Exception $e) {
