@@ -42,7 +42,7 @@ incluirTemplate('header');
         <?php echo $error ?>
     </div>
 <?php }?>
-<form action="" method="POST" class="formulario contacto">
+<form action="https://formspree.io/f/mbjqqrkg" method="POST" class="formulario contacto">
     <fieldset>
         <legend>Envianos un Mensaje</legend>
         <label for="nombre">Nombre y Apellido</label>
