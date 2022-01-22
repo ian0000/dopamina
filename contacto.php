@@ -28,32 +28,30 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $errores[] = 'Debes agregar un mensaje';
     }
     if(empty($errores)){
-        $emailuser = getenv('EMAILUSERNAME');
-        $emailpass = getenv('EMAILPASSWORD');
-        $emailhost = getenv("EMAILHOST");
-        
-        var_dump($emailhost);
-        var_dump($emailpass);
-        var_dump($emailuser);
+        $hostname = getenv('CLOUDMAILIN_FORWARD_ADDRESS');
+        $username = getenv('CLOUDMAILIN_USERNAME');
+        $password = getenv('CLOUDMAILIN_PASSWORD');
 
-        $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $emailhost;
-        $mail->SMTPAuth = "true";
-        $mail->SMTPSecure = "tls";
-        $mail->Port = "587";
-        $mail->Username = $emailuser;
-        $mail->Password = $emailpass;
-        $mail->Subject = "Test Email";
-        $mail->setFrom($emailuser);
-        $mail->Body = "this is a test";
-        $mail->addAddress("niklas0617@gmail.com");
-        if ($mail->Send()) {
-            echo "mail sent";
-        } else{
-            echo "error";
-        }
+        $transport = (new Swift_SmtpTransport($hostname, 587, 'tls'))
+        ->setUsername($username)
+        ->setPassword($password);
+
+        $mailer = new Swift_Mailer($transport);
+        $message = (new Swift_Message())
+        ->setSubject('Hello from PHP SwiftMailer')
+        ->setFrom(['ianmenaamagua@gmail.com'])
+        ->setTo(['niklas0617@gmail.com' => 'User Name']);
+
+        $headers = ($message->getHeaders())
+        -> addTextHeader('X-CloudMTA-Class', 'standard');
+
+        $message->setBody(
+        '<body>'.
+        '<h1>hello from php</h1>'.
+        '</body>'
+        );
+        $message->addPart('hello from PHP', 'text/plain');
+        $mailer->send($message);
     }
 }
 incluirTemplate('header');
