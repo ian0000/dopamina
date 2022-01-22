@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     if(empty($errores)){
         
         $query = "INSERT INTO contacto(nombre, correo, celular, mensaje) VALUES ('$nombre','$correo', '$celular', '$mensaje');";
-        $resultado - mysqli_query($db, $query);
+        $resultado = mysqli_query($db, $query);
         if($resultado){
             $success = "Se envio correctamente";
             $nombre = '';
