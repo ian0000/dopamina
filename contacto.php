@@ -62,7 +62,7 @@ incluirTemplate('header');
         <label for="celular">Tu Número de Celular <span>*</span></label>
         <input type="tel" class="dato" name="celular" placeholder="Tu Número Celular aquí...." value="<?php echo $celular ?>" required>
         <label for="mensaje">Tu Mensaje <span>*</span></label>
-        <textarea name="mensaje" id="mensaje" cols="30" rows="5" value="<?php echo $mensaje ?>"required></textarea>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="5" required></textarea>
     </fieldset>
     <input type="submit" value="Enviar" class="btn-verde" onclick="myFunction()"> 
 </form>
