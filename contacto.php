@@ -50,6 +50,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             echo "mail sent";
         } else{
             echo "error".$mail->ErrorInfo;
+            echo "asass";
             echo $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         }
     }
