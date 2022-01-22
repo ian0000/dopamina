@@ -25,39 +25,40 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $errores[] = 'Debes agregar un mensaje';
     }
     if(empty($errores)){
-        $emailuser = getenv('EMAILUSERNAME');
-        $emailpass = getenv('EMAILPASSWORD');
-        $emailhost = getenv("EMAILHOST");
-        try {
-            $mail = new PHPMailer();
-            $mail->isSMTP();
-            $mail->Host = $emailhost;
-            $mail->SMTPAuth = "true";
-            $mail->SMTPSecure = "tls";
-            $mail->Port = "587";
-            $mail->Username = $emailuser;
-            $mail->Password = $emailpass;
-            $mail->Subject = "Test Email";
-            $mail->setFrom($emailuser);
-            $mail->Body = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
-            $mail->addAddress("niklas0617@gmail.com");
-            if ($mail->Send()) {
-                echo "mail sent";
-            } else{
-                echo "error";
-            }
-        } catch (Exception $e) {
-            $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
-        }
+        // $emailuser = getenv('EMAILUSERNAME');
+        // $emailpass = getenv('EMAILPASSWORD');
+        // $emailhost = getenv("EMAILHOST");
+        // try {
+        //     $mail = new PHPMailer();
+        //     $mail->isSMTP();
+        //     $mail->Host = $emailhost;
+        //     $mail->SMTPAuth = "true";
+        //     $mail->SMTPSecure = "tls";
+        //     $mail->Port = "587";
+        //     $mail->Username = $emailuser;
+        //     $mail->Password = $emailpass;
+        //     $mail->Subject = "Test Email";
+        //     $mail->setFrom($emailuser);
+        //     $mail->Body = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
+        //     $mail->addAddress("niklas0617@gmail.com");
+        //     if ($mail->Send()) {
+        //         echo "mail sent";
+        //     } else{
+        //         echo "error";
+        //     }
+        echo "ahhhhh";
+        // } catch (Exception $e) {
+        //     $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
+        // }
     }
 }
 incluirTemplate('header');
 ?>
 <?php foreach($errores as $error){ ?>
-        <div class="alerta error">
-            <?php echo $error ?>
-        </div>
-    <?php }?>
+    <div class="alerta error">
+        <?php echo $error ?>
+    </div>
+<?php }?>
 <form action="" method="POST" class="formulario contacto">
     <fieldset>
         <legend>Envianos un Mensaje</legend>
