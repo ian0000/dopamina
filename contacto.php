@@ -1,9 +1,61 @@
 <?php
 require 'includes/funciones.php';
+require('vendor/autoload.php');
+$errores= [];
+// variables del formulario
+$nombre = '';
+$correo = '';
+$celular = '';
+$mensaje='';
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $celular = $_POST['celular'];
+    $mensaje = $_POST['mensaje'];
+    if (!$nombre) {
+        $errores[] = 'Debes agregar un nombre';
+    }
+    if (!$correo) {
+        $errores[] = 'Debes agregar un correo';
+    }
+    if (!$celular) {
+        $errores[] = 'Debes agregar un celular';
+    }
+    if (!$mensaje) {
+        $errores[] = 'Debes agregar un mensaje';
+    }
+    if(empty($errores)){
+        try {
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = getenv("EMAILHOST");
+            $mail->SMTPAuth = "true";
+            $mail->SMTPSecure = "tls";
+            $mail->Port = "587";
+            $mail->Username = getenv('EMAILUSERNAME');
+            $mail->Password = getenv('EMAILPASSWORD');
+            $mail->Subject = "Test Email";
+            $mail->setFrom(getenv('EMAILUSERNAME'));
+            $mail->Body = "this is a test";
+            $mail->addAddress("niklas0617@gmail.com");
+            if ($mail->Send()) {
+                echo "mail sent";
+            } else{
+                echo "error";
+            }
+        } catch (Exception $e) {
+            $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
+        }
+    }
+}
 incluirTemplate('header');
 ?>
-
-<form action="https://formspree.io/f/mbjqqrkg" method="POST" class="formulario contacto">
+<?php foreach($errores as $error){ ?>
+        <div class="alerta error">
+            <?php echo $error ?>
+        </div>
+    <?php }?>
+<form action="" method="POST" class="formulario contacto">
     <fieldset>
         <legend>Envianos un Mensaje</legend>
         <label for="nombre">Nombre y Apellido</label>
