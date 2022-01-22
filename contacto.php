@@ -1,6 +1,6 @@
 <?php
 require 'includes/funciones.php';
-require('/vendor/autoload.php');
+require('vendor/autoload.php');
 $errores= [];
 // variables del formulario
 $nombre = '';
@@ -25,17 +25,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $errores[] = 'Debes agregar un mensaje';
     }
     if(empty($errores)){
+        $emailuser = getenv('EMAILUSERNAME');
+        $emailpass = getenv('EMAILPASSWORD');
+        $emailhost = getenv("EMAILHOST");
         try {
             $mail = new PHPMailer();
             $mail->isSMTP();
-            $mail->Host = getenv("EMAILHOST");
+            $mail->Host = $emailhost;
             $mail->SMTPAuth = "true";
             $mail->SMTPSecure = "tls";
             $mail->Port = "587";
-            $mail->Username = getenv('EMAILUSERNAME');
-            $mail->Password = getenv('EMAILPASSWORD');
+            $mail->Username = $emailuser;
+            $mail->Password = $emailpass;
             $mail->Subject = "Test Email";
-            $mail->setFrom(getenv('EMAILUSERNAME'));
+            $mail->setFrom($emailuser);
             $mail->Body = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
             $mail->addAddress("niklas0617@gmail.com");
             if ($mail->Send()) {
