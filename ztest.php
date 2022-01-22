@@ -13,7 +13,6 @@ $mail->isSMTP();
 $mail->Host = $emailhost;
 $mail->SMTPAuth = "true";
 $mail->SMTPSecure = "tls";
-$mail->Port = "587";
 $mail->Username = $emailuser;
 $mail->Password = $emailpass;
 $mail->Subject = "Test Email";
