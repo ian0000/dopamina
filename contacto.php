@@ -45,15 +45,13 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $mail->setFrom("${emailuser}");
             $mail->Body = "${mensajefinal}";
             $mail->addAddress("niklas0617@gmail.com");
-            try {
-                $mail->Send();
-            } catch (Exception $e) {
-                echo $e;
-            }
+            $mail->Send();
             
-        echo "ahhhhh";
+            echo "se envio";
+            
+            echo "ahhhhh";
         } catch (Exception $e) {
-            $errores[] = 'Error al mandar el mensaje intente nuevamente.'.$e;
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 }
