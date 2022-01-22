@@ -31,6 +31,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailuser = getenv('EMAILUSERNAME');
         $emailpass = getenv('EMAILPASSWORD');
         $emailhost = getenv("EMAILHOST");
+        
+var_dump($emailhost);
 
         $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
         try {
