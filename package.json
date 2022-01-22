@@ -1,0 +1,23 @@
+{
+  "name": "dopamina1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w src/scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian0000/dopamina1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian0000/dopamina1/issues"
+  },
+  "homepage": "https://github.com/ian0000/dopamina1#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
