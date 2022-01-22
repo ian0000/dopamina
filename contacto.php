@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailpass = getenv('EMAILPASSWORD');
         $emailhost = getenv("EMAILHOST");
 
-        echo $emailuser.$emailpass.$emailhost;
+        echo "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
         // try {
         //     $mail = new PHPMailer();
         //     $mail->isSMTP();
