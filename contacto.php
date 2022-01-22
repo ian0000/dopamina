@@ -45,8 +45,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $mail->setFrom($emailuser);
             $mail->Body = $mensajefinal;
             $mail->addAddress("niklas0617@gmail.com");
-            $mail->Send();
-            
+            $mail->send();
+            if ($mail->Send()) {
+                echo "mail sent";
+            } else{
+                echo "error";
+            }
             echo $mail->Body;
             
             echo "ahhhhh";
