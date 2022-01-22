@@ -70,7 +70,7 @@ incluirTemplate('header');
         <label for="mensaje">Tu Mensaje <span>*</span></label>
         <textarea name="mensaje" id="mensaje" cols="30" rows="5" required></textarea>
     </fieldset>
-    <input type="submit" value="Enviar" class="btn-verde" onclick="window.location.href='index.html';">
+    <input type="submit" value="Enviar" class="btn-verde">
 </form>
 
 <?php
