@@ -17,7 +17,7 @@ incluirTemplate('header');
 
     <?php
     $limite = 3;
-    include 'includes/templates/disenio.php';
+    include 'includes/templates/disenioIndex.php';
     ?>
 </section>
 <a href="http://" class="btn centrado">Ver Más </a>
