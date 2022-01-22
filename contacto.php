@@ -1,5 +1,5 @@
 <?php
-require '../../includes/funciones.php';
+require 'includes/funciones.php';
 require 'includes/config/database.php';
 $errores= [];
 // variables del formulario
