@@ -33,6 +33,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $emailhost = getenv("EMAILHOST");
         
         var_dump($emailhost);
+        var_dump($emailpass);
+        var_dump($emailuser);
 
         $mensajefinal = "correo:".$correo."\n"."nombre".$nombre."\n"."celular".$celular."\n"."mensaje".$mensaje;
         $mail = new PHPMailer();
