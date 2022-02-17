@@ -782,7 +782,7 @@ input[type="submit"] {
 
 .us p {
   margin: 2rem 2rem;
-  color: #0d0d0d;
+  color: red;
   text-align: justify;
   text-transform: uppercase; }
   @media (min-width: 768px) {
