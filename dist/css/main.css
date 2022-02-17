@@ -319,11 +319,11 @@ body {
   font-family: "Encode Sans Condensed", sans-serif;
   font-size: 1.6rem;
   line-height: 1.8;
-  background: #FCFEFE;
+  background: #fcfefe;
   height: 100vh; }
 
 p {
-  color: #0D0D0D;
+  color: #0d0d0d;
   font-size: 2rem; }
 
 .contenedor {
@@ -369,16 +369,16 @@ h4 {
 .alerta {
   padding: .5rem;
   text-align: center;
-  color: #FCFEFE;
+  color: #fcfefe;
   font-weight: 700;
   text-transform: uppercase;
   margin: 1rem 0; }
   .alerta.error {
-    color: #FF5B3C; }
+    color: #ff5b3c; }
   .alerta.exito {
-    color: #A0EFE3; }
+    color: #a0efe3; }
   .alerta.empty {
-    color: #FCAC72; }
+    color: #fcac72; }
 
 .imagen-small {
   width: 20rem; }
@@ -386,7 +386,7 @@ h4 {
 th,
 td {
   padding: 3rem;
-  border: #0D0D0D solid 1px;
+  border: #0d0d0d solid 1px;
   text-align: center; }
 
 table {
@@ -399,17 +399,17 @@ table {
 .btn-volver {
   font-size: 1.5rem;
   display: inline-block;
-  border: 1px solid #0D0D0D;
+  border: 1px solid #0d0d0d;
   text-transform: uppercase;
   padding: 0.2rem;
   margin: 0.2rem;
-  color: #0D0D0D;
+  color: #0d0d0d;
   border-radius: .5rem;
   text-align: center; }
 
 .btn-agregar {
   float: right;
-  background: #FCAC72; }
+  background: #fcac72; }
 
 .crud {
   display: flex;
@@ -417,16 +417,16 @@ table {
   align-items: center; }
 
 .btn-volver {
-  background: #FF5B3C;
+  background: #ff5b3c;
   width: 10rem; }
 
 .btn-verde {
   margin-top: 2rem;
   padding: 0.3rem 1.06rem;
-  background: #A0EFE3; }
+  background: #a0efe3; }
 
 .btn-rojo {
-  background: #FF5B3C; }
+  background: #ff5b3c; }
 
 .formulario fieldset {
   margin-top: 0;
@@ -436,10 +436,10 @@ table {
       width: 70rem; } }
 
 .formulario input[type=file] {
-  color: #0D0D0D; }
+  color: #0d0d0d; }
 
 .formulario legend {
-  color: #FCAC72; }
+  color: #fcac72; }
 
 .formulario.contacto {
   padding: 21rem 0 18rem 0; }
@@ -452,14 +452,14 @@ table {
   padding-top: 15rem; }
 
 label {
-  color: #0D0D0D; }
+  color: #0d0d0d; }
 
 .nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  background: #0D0D0D;
+  background: #0d0d0d;
   padding: 1.25rem 5rem; }
   @media (min-width: 768px) {
     .nav {
@@ -485,9 +485,9 @@ label {
   flex-direction: row; }
   .navegacion a {
     margin: 1.25rem;
-    color: #FCFEFE; }
+    color: #fcfefe; }
     .navegacion a:hover {
-      color: #A0EFE3; }
+      color: #a0efe3; }
   .navegacion input[type=text] {
     display: none; }
 
@@ -495,20 +495,20 @@ label {
   margin: 1.5rem 0 0 0;
   background: transparent;
   border-style: none;
-  color: #FCFEFE;
+  color: #fcfefe;
   cursor: pointer; }
   .cart:hover {
-    color: #A0EFE3; }
+    color: #a0efe3; }
 
 .end {
   display: block;
-  background: #0D0D0D;
+  background: #0d0d0d;
   width: 100%;
   height: 8vh;
   font-size: 5vh;
   text-align: center; }
   .end a {
-    color: #FCFEFE;
+    color: #fcfefe;
     margin: 2rem;
     border-radius: 15%;
     transition: all .4s; }
@@ -523,14 +523,14 @@ label {
       text-shadow: 0 0 30px #25d366; }
 
 .bg-image {
-  background: #FCFEFE url("../../dist/img/doctf.png") no-repeat center center/cover;
+  background: #fcfefe url("../../dist/img/doctf.png") no-repeat center center/cover;
   filter: blur(1.5rem);
   -webkit-filter: blur(3px);
   height: 100vh;
   width: 100%; }
 
 .titulo {
-  color: #FCFEFE;
+  color: #fcfefe;
   font-weight: 700;
   /* Fallback color */
   background-color: rgba(51, 51, 51, 0.4);
@@ -555,7 +555,7 @@ label {
 
 .frase {
   font-size: 1rem;
-  color: #FCFEFE;
+  color: #fcfefe;
   top: 62%;
   font-weight: 500;
   text-transform: uppercase;
@@ -577,7 +577,7 @@ label {
     .link {
       font-size: 3rem; } }
   .link:hover {
-    color: #0D0D0D; }
+    color: #0d0d0d; }
 
 .btn {
   top: -15rem;
@@ -585,20 +585,20 @@ label {
   font-size: 1rem;
   padding: 0.5rem;
   position: relative;
-  border: 1px solid #0D0D0D;
-  color: #FCFEFE;
+  border: 1px solid #0d0d0d;
+  color: #fcfefe;
   background-color: rgba(51, 51, 51, 0.6); }
   @media (min-width: 1024px) {
     .btn {
       left: 52rem;
       font-size: 2rem; } }
   .btn:hover {
-    color: #0D0D0D;
+    color: #0d0d0d;
     background-color: rgba(252, 254, 254, 0.6); }
 
 .referencia {
   font-size: 1rem;
-  color: #FCFEFE; }
+  color: #fcfefe; }
 
 .separacion {
   margin-bottom: 10rem; }
@@ -615,13 +615,13 @@ h2 {
   font-weight: 900;
   font-size: 3rem;
   width: 100%;
-  background-color: #FCFEFE;
+  background-color: #fcfefe;
   margin-top: -8rem; }
 
 .carta {
-  background-color: #FCFEFE;
+  background-color: #fcfefe;
   border-radius: 2.4rem;
-  border: #0D0D0D 1px solid;
+  border: #0d0d0d 1px solid;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column; }
@@ -635,7 +635,7 @@ h2 {
         height: 30rem; } }
   .carta .stock {
     text-align: end;
-    color: #0D0D0D;
+    color: #0d0d0d;
     padding: 0rem 2rem 0rem 1rem;
     margin: 1rem 0 0; }
   .carta .datos {
@@ -643,7 +643,7 @@ h2 {
     flex: 1;
     display: flex;
     flex-direction: column;
-    color: #FCFEFE;
+    color: #fcfefe;
     background-color: #333333;
     padding: 0rem 1rem 1rem 1rem;
     border-radius: 0 0 2rem 2rem; }
@@ -687,7 +687,7 @@ h2 {
 .boton-rosa {
   padding: 1rem;
   font-size: 1rem;
-  background: #FCFEFE;
+  background: #fcfefe;
   border-radius: 1rem; }
   @media (min-width: 768px) {
     .boton-rosa {
@@ -697,7 +697,7 @@ h2 {
       font-size: 2rem; } }
   .boton-rosa:hover {
     background: rgba(252, 254, 254, 0.5);
-    color: #FCFEFE; }
+    color: #fcfefe; }
 
 .centrado {
   margin: auto;
@@ -709,7 +709,7 @@ h2 {
 
 .somos {
   height: auto;
-  background: #FCFEFE; }
+  background: #fcfefe; }
   .somos h2 {
     margin-top: 8rem; }
 
@@ -721,7 +721,7 @@ h2 {
 .tarj {
   display: flex;
   flex-direction: column;
-  border: 1px #0D0D0D solid;
+  border: 1px #0d0d0d solid;
   gap: 3rem;
   border-radius: 1rem;
   margin: 2rem 6rem;
@@ -741,7 +741,7 @@ h2 {
     border-radius: 10rem; }
 
 p {
-  color: #FCFEFE; }
+  color: #fcfefe; }
 
 .informacion {
   transform: translate(0, -auto);
@@ -749,7 +749,7 @@ p {
   background: transparent; }
 
 legend {
-  color: #FCFEFE;
+  color: #fcfefe;
   font-size: 2rem; }
 
 fieldset {
@@ -757,7 +757,7 @@ fieldset {
   flex-direction: column;
   padding-bottom: 7rem;
   margin: 15rem 1rem 0;
-  color: #FCFEFE; }
+  color: #fcfefe; }
   @media (min-width: 768px) {
     fieldset {
       width: 80rem;
@@ -782,7 +782,7 @@ input[type="submit"] {
 
 .us p {
   margin: 2rem 2rem;
-  color: #0D0D0D;
+  color: #0d0d0d;
   text-align: justify;
   text-transform: uppercase; }
   @media (min-width: 768px) {
@@ -795,6 +795,6 @@ input[type="submit"] {
         font-size: 4rem; } }
 
 span {
-  background: #0D0D0D;
+  background: #0d0d0d;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
