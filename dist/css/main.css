@@ -775,14 +775,14 @@ input[type="submit"] {
   left: 0; }
 
 .us h2 {
-  margin-top: 3rem;
-  color: red; }
+  margin-top: 3rem; }
   @media (min-width: 768px) {
     .us h2 {
       font-size: 6rem; } }
 
 .us p {
   margin: 2rem 2rem;
+  color: #0d0d0d;
   text-align: justify;
   text-transform: uppercase; }
   @media (min-width: 768px) {
