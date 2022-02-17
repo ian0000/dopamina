@@ -8,7 +8,7 @@ incluirTemplate('header');
     <p>Dopamina Scrubs</p>
     <p>es creada en el año 2020 en respuesta a la necesidad en el mercado local de uniformes que estén a la altura del personal de salud de nuestro país.</p>
     <p>Sus fundadores, médicos y odontólogos jóvenes, convencidos de poder crear una marca diferente con diseños propios que se ajusten a las necesidades laborales, no solo plasman sus primeros modelos, consolidan una fábrica para confeccionarlos bajo estándares de alta calidad tanto en tela como en costura y así también dar empleo a familias ecuatorianas.</p>
-    <p>MÉDICOS DEJANDO GGGGGGGG SU MARCA EN <span class="txt-type" data-wait="2000" data-words='["EL ECUADOR","LA MODA","EL UNIVERSO"]'></span></p>
+    <p>MÉDICOS DEJANDO SU MARCA EN <span class="txt-type" data-wait="2000" data-words='["EL ECUADOR","LA MODA","EL UNIVERSO"]'></span></p>
 </div>
 <section class="seccion contenedor somos">
 

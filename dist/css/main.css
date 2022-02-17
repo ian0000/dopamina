@@ -795,6 +795,6 @@ input[type="submit"] {
         font-size: 4rem; } }
 
 span {
-  background: #0d0d0d;
+  background: red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
