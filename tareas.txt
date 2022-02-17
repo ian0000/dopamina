@@ -1,6 +1,5 @@
 (-g = general; -c = cliente; -u = admin; -t = templates)
 -- por hacer
-actualizarRopa -u
 
 actualizarUsuario -u
 crearRopaUsuario -u
@@ -23,6 +22,7 @@ que el navbar se mueva con la posicion de la pantalla
 index -u
 carrito -c
 -- funciona
+actualizarRopa -u
 crearRopa -u
 contacto -g 
 coleccion -c

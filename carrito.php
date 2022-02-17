@@ -10,7 +10,7 @@ incluirTemplate('header');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tmp;
     $tmp1;
-    if (count($_POST) > 0) {
+    if (!empty($_POST)) {
         $array = $_POST['item'];
         foreach ($_POST['item'] as $key) {
             $tmp[$i] = explode(',', $key);
@@ -56,8 +56,9 @@ $db = conectarDB();
                 <?php
                 for ($j = 0; $j < $i; $j++) {
                     $cantidad1 += $tmp[$j][1];
-                ?>
+                    ?>
                 <?php
+                var_dump($busqueda);
                 }
                 ?>
                 <td onload="total(<?php echo $cantidad1 ?>)"><?php echo $cantidad1 ?></td>
