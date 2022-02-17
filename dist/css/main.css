@@ -795,6 +795,6 @@ input[type="submit"] {
         font-size: 4rem; } }
 
 span {
-  background: -webkit-linear-gradient(45deg, #a39305 45%, blue 46% 65%, red 66% 100%);
+  background: #0D0D0D;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
