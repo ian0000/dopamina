@@ -16,7 +16,7 @@ $auth = $_SESSION['login'] ?? false;
     <link rel="icon" type="image/png" href="favicon.png">
     <title>DOPAMINA</title>
     <script src="https://kit.fontawesome.com/ca287116b3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="../dist/css/main.css">
 </head>
 
 <body>

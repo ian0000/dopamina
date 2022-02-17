@@ -323,7 +323,7 @@ body {
   height: 100vh; }
 
 p {
-  color: red;
+  color: #0d0d0d;
   font-size: 2rem; }
 
 .contenedor {
@@ -386,7 +386,7 @@ h4 {
 th,
 td {
   padding: 3rem;
-  border: red solid 1px;
+  border: #0d0d0d solid 1px;
   text-align: center; }
 
 table {
@@ -399,11 +399,11 @@ table {
 .btn-volver {
   font-size: 1.5rem;
   display: inline-block;
-  border: 1px solid red;
+  border: 1px solid #0d0d0d;
   text-transform: uppercase;
   padding: 0.2rem;
   margin: 0.2rem;
-  color: red;
+  color: #0d0d0d;
   border-radius: .5rem;
   text-align: center; }
 
@@ -436,7 +436,7 @@ table {
       width: 70rem; } }
 
 .formulario input[type=file] {
-  color: red; }
+  color: #0d0d0d; }
 
 .formulario legend {
   color: #fcac72; }
@@ -452,14 +452,14 @@ table {
   padding-top: 15rem; }
 
 label {
-  color: red; }
+  color: #0d0d0d; }
 
 .nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  background: red;
+  background: #0d0d0d;
   padding: 1.25rem 5rem; }
   @media (min-width: 768px) {
     .nav {
@@ -502,7 +502,7 @@ label {
 
 .end {
   display: block;
-  background: red;
+  background: #0d0d0d;
   width: 100%;
   height: 8vh;
   font-size: 5vh;
@@ -533,7 +533,7 @@ label {
   color: #fcfefe;
   font-weight: 700;
   /* Fallback color */
-  background-color: rgba(255, 0, 0, 0.4);
+  background-color: rgba(51, 51, 51, 0.4);
   /* Black w/opacity/see-through */
   border: 3px solid #f1f1f1;
   left: 50%;
@@ -566,7 +566,7 @@ label {
       top: 60%; } }
 
 .link {
-  color: red;
+  color: #333333;
   top: 70%;
   left: 50%;
   font-weight: 500;
@@ -577,7 +577,7 @@ label {
     .link {
       font-size: 3rem; } }
   .link:hover {
-    color: red; }
+    color: #0d0d0d; }
 
 .btn {
   top: -15rem;
@@ -585,15 +585,15 @@ label {
   font-size: 1rem;
   padding: 0.5rem;
   position: relative;
-  border: 1px solid red;
+  border: 1px solid #0d0d0d;
   color: #fcfefe;
-  background-color: rgba(255, 0, 0, 0.6); }
+  background-color: rgba(51, 51, 51, 0.6); }
   @media (min-width: 1024px) {
     .btn {
       left: 52rem;
       font-size: 2rem; } }
   .btn:hover {
-    color: red;
+    color: #0d0d0d;
     background-color: rgba(252, 254, 254, 0.6); }
 
 .referencia {
@@ -621,7 +621,7 @@ h2 {
 .carta {
   background-color: #fcfefe;
   border-radius: 2.4rem;
-  border: red 1px solid;
+  border: #0d0d0d 1px solid;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column; }
@@ -635,7 +635,7 @@ h2 {
         height: 30rem; } }
   .carta .stock {
     text-align: end;
-    color: red;
+    color: #0d0d0d;
     padding: 0rem 2rem 0rem 1rem;
     margin: 1rem 0 0; }
   .carta .datos {
@@ -644,7 +644,7 @@ h2 {
     display: flex;
     flex-direction: column;
     color: #fcfefe;
-    background-color: red;
+    background-color: #333333;
     padding: 0rem 1rem 1rem 1rem;
     border-radius: 0 0 2rem 2rem; }
     .carta .datos h4 {
@@ -721,12 +721,12 @@ h2 {
 .tarj {
   display: flex;
   flex-direction: column;
-  border: 1px red solid;
+  border: 1px #0d0d0d solid;
   gap: 3rem;
   border-radius: 1rem;
   margin: 2rem 6rem;
   padding: 2rem 4rem;
-  background-color: rgba(255, 0, 0, 0.4); }
+  background-color: rgba(51, 51, 51, 0.4); }
   @media (min-width: 768px) {
     .tarj {
       flex-direction: row; }
