@@ -1,16 +1,16 @@
-@import 'base/normalize';
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/globales';
-@import 'base/utilidades';
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/globales";
+@import "base/utilidades";
 //internas
-@import 'internas/admin';
-@import 'internas/formularios';
-//layout 
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/index';
-@import 'layout/cartas';
-@import 'layout/info';
-@import 'layout/contacto';
-@import 'layout/us'; 
+@import "internas/admin";
+@import "internas/formularios";
+//layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/index";
+@import "layout/cartas";
+@import "layout/info";
+@import "layout/contacto";
+@import "layout/us";

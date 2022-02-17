@@ -793,7 +793,3 @@ input[type="submit"] {
     @media (min-width: 768px) {
       .us p:first-of-type, .us p:last-of-type {
         font-size: 4rem; } }
-
-span {
-  background: #0d0d0d;
-  -webkit-background-clip: text; }
