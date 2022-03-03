@@ -484,12 +484,27 @@ label {
   display: flex;
   flex-direction: row; }
   .navegacion a {
+    display: none;
     margin: 1.25rem;
     color: #fcfefe; }
+    @media (min-width: 768px) {
+      .navegacion a {
+        display: block; } }
     .navegacion a:hover {
       color: #a0efe3; }
-  .navegacion input[type=text] {
+  .navegacion input[type="text"] {
     display: none; }
+  .navegacion .icon {
+    float: right;
+    display: block; }
+    @media (min-width: 768px) {
+      .navegacion .icon {
+        display: none; } }
+  .navegacion form {
+    display: none; }
+    @media (min-width: 768px) {
+      .navegacion form {
+        display: block; } }
 
 .cart {
   margin: 1.5rem 0 0 0;
